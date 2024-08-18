@@ -1,4 +1,4 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 # from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
@@ -65,7 +65,6 @@ def registration(request):
         # If not, simply log this is a new user
         logger.debug("{} is new user".format(username))
 
-    
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
@@ -102,7 +101,7 @@ def get_cars(request):
 # Update the `get_dealerships` render list of dealerships all
 # by default, particular state if state is passed
 def get_dealerships(request, state="All"):
-    if(state == "All"):
+    if (state == "All"):
         endpoint = "/fetchDealers"
     else:
         endpoint = "/fetchDealers/"+state
